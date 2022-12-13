@@ -10,6 +10,10 @@ namespace Testing_Astar
     {
         static void Main(string[] args)
         {
+            // THE # IS THE WALL
+            // THE * IS THE "NODES" BASICALLY THE PATH TO THE GOAL
+            // THE S IS THE START POSITION
+            // THE G IS GOAL
             SquareGrid grid = new SquareGrid(6, 10);
             
             grid.walls.Add(new Location(10 - 1, 1 - 1));
@@ -57,11 +61,9 @@ namespace Testing_Astar
             
             Location endingLocation = new Location(5, 5);
 
-            
             AstarSearch aStar = new AstarSearch(grid);
             aStar.CalculatePath(startingLocation, endingLocation);
 
-            
             DrawGride(grid, aStar);
 
             Console.ReadLine();
